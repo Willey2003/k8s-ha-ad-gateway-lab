@@ -1,0 +1,10 @@
+[Unit]
+Description=Run the Kubernetes backup every 7 days (Sunday 02:00 IST)
+
+[Timer]
+OnCalendar=Sun *-*-* 02:00:00
+Persistent=true
+Unit=k8s-weekly-backup.service
+
+[Install]
+WantedBy=timers.target

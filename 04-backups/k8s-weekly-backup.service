@@ -1,0 +1,10 @@
+[Unit]
+Description=Weekly Kubernetes backup (etcd snapshot + Velero)
+Wants=network-online.target versitygw.service
+After=network-online.target versitygw.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/k8s-weekly-backup.sh
+Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+TimeoutStartSec=3h

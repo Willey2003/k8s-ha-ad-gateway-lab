@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1680 1180" width="1680" height="1180" font-family="IBM Plex Sans, Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="LAB lab infrastructure diagram">
+<defs><marker id="aink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#18222d"/></marker><marker id="amuted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#586674"/></marker><marker id="arule" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#9fb0bd"/></marker><marker id="auser" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#eef3ff"/></marker><marker id="auserB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#5b7bd5"/></marker><marker id="aad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fff4e0"/></marker><marker id="aadB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c98a1a"/></marker><marker id="anet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f4f7f9"/></marker><marker id="anetB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#7f95a6"/></marker><marker id="acp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e3f1f2"/></marker><marker id="acpB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d6b76"/></marker><marker id="awk" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#eef6ec"/></marker><marker id="awkB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3f8a4a"/></marker><marker id="aetcd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fbeaea"/></marker><marker id="aetcdB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b04848"/></marker><marker id="abas" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#f1ecfb"/></marker><marker id="abasB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6d52b8"/></marker><marker id="agw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#e6f3fb"/></marker><marker id="agwB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f78b4"/></marker><marker id="avip" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#0d6b76"/></marker><marker id="arouter" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#fff8d6"/></marker><marker id="arouterB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a08a1c"/></marker></defs>
+<rect width="1680" height="1180" fill="#ffffff"/>
+<rect x="20" y="20" width="520" height="200" rx="10" fill="#eef3ff" stroke="#5b7bd5" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="32" y="42" font-size="14" font-weight="600" fill="#5b7bd5">User network  10.10.5.0/24</text>
+<rect x="1140" y="20" width="520" height="200" rx="10" fill="#fff4e0" stroke="#c98a1a" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1152" y="42" font-size="14" font-weight="600" fill="#c98a1a">Active Directory  corp.example</text>
+<rect x="20" y="330" width="1640" height="830" rx="10" fill="#f4f7f9" stroke="#7f95a6" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="32" y="352" font-size="14" font-weight="600" fill="#7f95a6">Lab network  10.10.1.0/24  (vSphere lab VLAN port group)</text>
+<rect x="470" y="450" width="740" height="250" rx="10" fill="#e3f1f2" stroke="#0d6b76" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="482" y="472" font-size="14" font-weight="600" fill="#0d6b76">Kubernetes control plane  v1.32.13 / cri-o 1.32.1</text>
+<rect x="470" y="740" width="740" height="400" rx="10" fill="#eef6ec" stroke="#3f8a4a" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="482" y="762" font-size="14" font-weight="600" fill="#3f8a4a">Worker nodes  (application pods, Calico BGP)</text>
+<rect x="1250" y="450" width="390" height="330" rx="10" fill="#fbeaea" stroke="#b04848" stroke-width="2" stroke-dasharray="7 5"/>
+<text x="1262" y="472" font-size="14" font-weight="600" fill="#b04848">External etcd cluster  v3.5.27  (TLS)</text>
+<rect x="50" y="70" width="220" height="120" rx="8" fill="#ffffff" stroke="#5b7bd5" stroke-width="1.6"/>
+<rect x="50" y="70" width="5" height="120" rx="2" fill="#5b7bd5"/>
+<text x="64" y="91" font-size="14" font-weight="600" fill="#18222d">Lab users &amp; admins</text>
+<text x="64" y="110.0" font-size="12.5" fill="#586674" xml:space="preserve">Windows PCs, e.g. 10.10.5.7</text>
+<text x="64" y="127.5" font-size="12.5" fill="#586674" xml:space="preserve">SSH client + browser</text>
+<text x="64" y="145.0" font-size="12.5" fill="#586674" xml:space="preserve">AD login</text>
+<rect x="300" y="70" width="210" height="120" rx="8" fill="#ffffff" stroke="#5b7bd5" stroke-width="1.6"/>
+<rect x="300" y="70" width="5" height="120" rx="2" fill="#5b7bd5"/>
+<text x="314" y="91" font-size="14" font-weight="600" fill="#18222d">Browser</text>
+<text x="314" y="110.0" font-size="12.5" fill="#586674" xml:space="preserve">https://&lt;app&gt;.apps.corp.example</text>
+<text x="314" y="127.5" font-size="12.5" fill="#586674" xml:space="preserve">trusts Home Lab Root CA</text>
+<rect x="1170" y="70" width="220" height="120" rx="8" fill="#ffffff" stroke="#c98a1a" stroke-width="1.6"/>
+<rect x="1170" y="70" width="5" height="120" rx="2" fill="#c98a1a"/>
+<text x="1184" y="91" font-size="14" font-weight="600" fill="#18222d">dc01</text>
+<text x="1184" y="110.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.5.251</text>
+<text x="1184" y="127.5" font-size="12.5" fill="#586674" xml:space="preserve">AD · DNS · NTP · Kerberos</text>
+<text x="1184" y="145.0" font-size="12.5" fill="#586674" xml:space="preserve">LDAPS 636 (lab CA cert)</text>
+<rect x="1410" y="70" width="220" height="120" rx="8" fill="#ffffff" stroke="#c98a1a" stroke-width="1.6"/>
+<rect x="1410" y="70" width="5" height="120" rx="2" fill="#c98a1a"/>
+<text x="1424" y="91" font-size="14" font-weight="600" fill="#18222d">dc02</text>
+<text x="1424" y="110.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.5.252</text>
+<text x="1424" y="127.5" font-size="12.5" fill="#586674" xml:space="preserve">AD · DNS · NTP · Kerberos</text>
+<text x="1424" y="145.0" font-size="12.5" fill="#586674" xml:space="preserve">LDAPS 636 (lab CA cert)</text>
+<rect x="700" y="245" width="280" height="62" rx="8" fill="#fff8d6" stroke="#a08a1c" stroke-width="1.6"/>
+<rect x="700" y="245" width="5" height="62" rx="2" fill="#a08a1c"/>
+<text x="714" y="266" font-size="14" font-weight="600" fill="#18222d">Router / gateway 10.10.1.1</text>
+<text x="714" y="285.0" font-size="12.5" fill="#586674" xml:space="preserve">routes 10.10.1.0/27 today → request /24</text>
+<rect x="50" y="390" width="380" height="300" rx="8" fill="#ffffff" stroke="#6d52b8" stroke-width="1.6"/>
+<rect x="50" y="390" width="5" height="300" rx="2" fill="#6d52b8"/>
+<text x="64" y="411" font-size="14" font-weight="600" fill="#18222d">Bastion  10.10.1.11</text>
+<text x="64" y="430.0" font-size="12.5" fill="#586674" xml:space="preserve">bastion.corp.example</text>
+<text x="64" y="447.5" font-size="12.5" fill="#586674" xml:space="preserve"></text>
+<text x="64" y="465.0" font-size="12.5" fill="#586674" xml:space="preserve">• SSH entry for all AD users (no sudo)</text>
+<text x="64" y="482.5" font-size="12.5" fill="#586674" xml:space="preserve">• kubectl + kubelogin (AD login via Dex)</text>
+<text x="64" y="500.0" font-size="12.5" fill="#586674" xml:space="preserve">• Helm, Velero CLI, etcdctl</text>
+<text x="64" y="517.5" font-size="12.5" fill="#586674" xml:space="preserve">• S3 store versitygw :7070</text>
+<text x="64" y="535.0" font-size="12.5" fill="#586674" xml:space="preserve">• 500 GB backup disk /srv/backup</text>
+<text x="64" y="552.5" font-size="12.5" fill="#586674" xml:space="preserve">• Weekly backup timer  Sun 02:00 IST</text>
+<text x="64" y="570.0" font-size="12.5" fill="#586674" xml:space="preserve">  (etcd snapshot + Velero, keep 8 wks)</text>
+<rect x="690" y="480" width="300" height="52" rx="8" fill="#0d6b76"/>
+<text x="840.0" y="502" text-anchor="middle" font-size="14" font-weight="600" fill="#ffffff">API VIP  10.10.1.20:6443</text>
+<text x="840.0" y="520" text-anchor="middle" font-size="11.5" fill="#e3f1f2">k8s-api.corp.example  (kube-vip, ARP)</text>
+<rect x="495" y="570" width="210" height="110" rx="8" fill="#ffffff" stroke="#0d6b76" stroke-width="1.6"/>
+<rect x="495" y="570" width="5" height="110" rx="2" fill="#0d6b76"/>
+<text x="509" y="591" font-size="14" font-weight="600" fill="#18222d">manager</text>
+<text x="509" y="610.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.1.14</text>
+<text x="509" y="627.5" font-size="12.5" fill="#586674" xml:space="preserve">apiserver · scheduler</text>
+<text x="509" y="645.0" font-size="12.5" fill="#586674" xml:space="preserve">controller-mgr · kube-vip</text>
+<rect x="735" y="570" width="210" height="110" rx="8" fill="#ffffff" stroke="#0d6b76" stroke-width="1.6"/>
+<rect x="735" y="570" width="5" height="110" rx="2" fill="#0d6b76"/>
+<text x="749" y="591" font-size="14" font-weight="600" fill="#18222d">manager-2</text>
+<text x="749" y="610.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.1.21</text>
+<text x="749" y="627.5" font-size="12.5" fill="#586674" xml:space="preserve">apiserver · scheduler</text>
+<text x="749" y="645.0" font-size="12.5" fill="#586674" xml:space="preserve">controller-mgr · kube-vip</text>
+<rect x="975" y="570" width="210" height="110" rx="8" fill="#ffffff" stroke="#0d6b76" stroke-width="1.6"/>
+<rect x="975" y="570" width="5" height="110" rx="2" fill="#0d6b76"/>
+<text x="989" y="591" font-size="14" font-weight="600" fill="#18222d">manager-3</text>
+<text x="989" y="610.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.1.22</text>
+<text x="989" y="627.5" font-size="12.5" fill="#586674" xml:space="preserve">apiserver · scheduler</text>
+<text x="989" y="645.0" font-size="12.5" fill="#586674" xml:space="preserve">controller-mgr · kube-vip</text>
+<rect x="490" y="790" width="160" height="72" rx="8" fill="#ffffff" stroke="#3f8a4a" stroke-width="1.6"/>
+<rect x="490" y="790" width="5" height="72" rx="2" fill="#3f8a4a"/>
+<text x="504" y="811" font-size="14" font-weight="600" fill="#18222d">worker-a</text>
+<text x="504" y="830.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.1.15</text>
+<rect x="670" y="790" width="160" height="72" rx="8" fill="#ffffff" stroke="#3f8a4a" stroke-width="1.6"/>
+<rect x="670" y="790" width="5" height="72" rx="2" fill="#3f8a4a"/>
+<text x="684" y="811" font-size="14" font-weight="600" fill="#18222d">worker-b</text>
+<text x="684" y="830.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.1.16</text>
+<rect x="850" y="790" width="160" height="72" rx="8" fill="#ffffff" stroke="#3f8a4a" stroke-width="1.6"/>
+<rect x="850" y="790" width="5" height="72" rx="2" fill="#3f8a4a"/>
+<text x="864" y="811" font-size="14" font-weight="600" fill="#18222d">worker-c</text>
+<text x="864" y="830.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.1.17</text>
+<rect x="1030" y="790" width="160" height="72" rx="8" fill="#ffffff" stroke="#3f8a4a" stroke-width="1.6"/>
+<rect x="1030" y="790" width="5" height="72" rx="2" fill="#3f8a4a"/>
+<text x="1044" y="811" font-size="14" font-weight="600" fill="#18222d">worker-d</text>
+<text x="1044" y="830.0" font-size="12.5" fill="#586674" xml:space="preserve">10.10.1.18</text>
+<rect x="490" y="885" width="700" height="240" rx="8" fill="#ffffff" stroke="#3f8a4a" stroke-width="1.6"/>
+<rect x="490" y="885" width="5" height="240" rx="2" fill="#3f8a4a"/>
+<text x="504" y="906" font-size="13" font-weight="600" fill="#18222d">Platform services running on the workers</text>
+<text x="504" y="925.0" font-size="11.5" fill="#586674" xml:space="preserve">• Dex ×2  –  AD login (OIDC), NodePort 32000 → dex.corp.example via VIP</text>
+<text x="504" y="941.5" font-size="11.5" fill="#586674" xml:space="preserve">• HAProxy Unified Gateway ×2  –  Gateway "apps" :80/:443, wildcard TLS *.apps</text>
+<text x="504" y="958.0" font-size="11.5" fill="#586674" xml:space="preserve">• MetalLB  –  L2 speakers, pool 10.10.1.25-29 (+.40-.49 after /24)</text>
+<text x="504" y="974.5" font-size="11.5" fill="#586674" xml:space="preserve">• Velero server + node-agent  –  backups to Bastion S3</text>
+<text x="504" y="991.0" font-size="11.5" fill="#586674" xml:space="preserve">• CoreDNS (corp.example → DCs) · Calico · kube-proxy</text>
+<text x="504" y="1007.5" font-size="11.5" fill="#586674" xml:space="preserve">• playground namespace  –  user apps (quota, Pod Security baseline)</text>
+<text x="504" y="1024.0" font-size="11.5" fill="#586674" xml:space="preserve">   e.g. hello.apps.corp.example</text>
+<rect x="50" y="760" width="380" height="110" rx="8" fill="#ffffff" stroke="#1f78b4" stroke-width="1.6"/>
+<rect x="50" y="760" width="5" height="110" rx="2" fill="#1f78b4"/>
+<text x="64" y="781" font-size="14" font-weight="600" fill="#18222d">App gateway  10.10.1.25</text>
+<text x="64" y="800.0" font-size="12.5" fill="#586674" xml:space="preserve">*.apps.corp.example  ports 80 / 443</text>
+<text x="64" y="817.5" font-size="12.5" fill="#586674" xml:space="preserve">MetalLB LoadBalancer IP (announced by a worker)</text>
+<text x="64" y="835.0" font-size="12.5" fill="#586674" xml:space="preserve">→ HAProxy Unified Gateway pods</text>
+<rect x="50" y="900" width="380" height="240" rx="8" fill="#ffffff" stroke="#586674" stroke-width="1.6"/>
+<rect x="50" y="900" width="5" height="240" rx="2" fill="#586674"/>
+<text x="64" y="921" font-size="13" font-weight="600" fill="#18222d">Access model (AD groups → RBAC)</text>
+<text x="64" y="940.0" font-size="11.5" fill="#586674" xml:space="preserve">Lab user (all Domain Users)</text>
+<text x="64" y="956.5" font-size="11.5" fill="#586674" xml:space="preserve">  SSH: Bastion only, no sudo</text>
+<text x="64" y="973.0" font-size="11.5" fill="#586674" xml:space="preserve">  K8s: view cluster (no Secrets)</text>
+<text x="64" y="989.5" font-size="11.5" fill="#586674" xml:space="preserve">        + edit in namespace playground</text>
+<text x="64" y="1006.0" font-size="11.5" fill="#586674" xml:space="preserve"></text>
+<text x="64" y="1022.5" font-size="11.5" fill="#586674" xml:space="preserve">Lab administrator (K8s-Admins)</text>
+<text x="64" y="1039.0" font-size="11.5" fill="#586674" xml:space="preserve">  SSH + sudo on all 11 machines</text>
+<text x="64" y="1055.5" font-size="11.5" fill="#586674" xml:space="preserve">  K8s: cluster-admin</text>
+<text x="64" y="1072.0" font-size="11.5" fill="#586674" xml:space="preserve"></text>
+<text x="64" y="1088.5" font-size="11.5" fill="#586674" xml:space="preserve">Emergency: local accounts + admin.conf</text>
+<rect x="1275" y="495" width="340" height="78" rx="8" fill="#ffffff" stroke="#b04848" stroke-width="1.6"/>
+<rect x="1275" y="495" width="5" height="78" rx="2" fill="#b04848"/>
+<text x="1289" y="516" font-size="14" font-weight="600" fill="#18222d">etcd-1  10.10.1.12</text>
+<text x="1289" y="535.0" font-size="12.5" fill="#586674" xml:space="preserve">:2379 client / :2380 peer</text>
+<text x="1289" y="552.5" font-size="12.5" fill="#586674" xml:space="preserve">also: v1.29 worker (other cluster)</text>
+<rect x="1275" y="587" width="340" height="78" rx="8" fill="#ffffff" stroke="#b04848" stroke-width="1.6"/>
+<rect x="1275" y="587" width="5" height="78" rx="2" fill="#b04848"/>
+<text x="1289" y="608" font-size="14" font-weight="600" fill="#18222d">etcd-2  10.10.1.13</text>
+<text x="1289" y="627.0" font-size="12.5" fill="#586674" xml:space="preserve">:2379 client / :2380 peer</text>
+<text x="1289" y="644.5" font-size="12.5" fill="#586674" xml:space="preserve">also: v1.29 worker (other cluster)</text>
+<rect x="1275" y="679" width="340" height="78" rx="8" fill="#ffffff" stroke="#b04848" stroke-width="1.6"/>
+<rect x="1275" y="679" width="5" height="78" rx="2" fill="#b04848"/>
+<text x="1289" y="700" font-size="14" font-weight="600" fill="#18222d">etcd-3  10.10.1.19</text>
+<text x="1289" y="719.0" font-size="12.5" fill="#586674" xml:space="preserve">:2379 client / :2380 peer</text>
+<text x="1289" y="736.5" font-size="12.5" fill="#586674" xml:space="preserve">also: k3s server + NFS server</text>
+<rect x="1250" y="800" width="390" height="90" rx="8" fill="#fff8d6" stroke="#a08a1c" stroke-width="1.6"/>
+<rect x="1250" y="800" width="5" height="90" rx="2" fill="#a08a1c"/>
+<text x="1264" y="821" font-size="13" font-weight="600" fill="#18222d">Shared etcd VMs</text>
+<text x="1264" y="840.0" font-size="11.5" fill="#586674" xml:space="preserve">The etcd VMs also host other lab clusters.</text>
+<text x="1264" y="856.5" font-size="11.5" fill="#586674" xml:space="preserve">Next project: dedicated etcd VMs.</text>
+<path d="M160,190 L160,276 L700,276" fill="none" stroke="#5b7bd5" stroke-width="2" stroke-linejoin="round" marker-end="url(#auserB)"/>
+<path d="M760,307 L760,372 L240,372 L240,390" fill="none" stroke="#6d52b8" stroke-width="2" stroke-linejoin="round" marker-end="url(#abasB)"/>
+<path d="M720,307 L720,356 L452,356 L452,815 L430,815" fill="none" stroke="#1f78b4" stroke-width="2" stroke-linejoin="round" marker-end="url(#agwB)"/>
+<path d="M430,506 L690,506" fill="none" stroke="#0d6b76" stroke-width="2" stroke-linejoin="round" marker-end="url(#avip)"/>
+<path d="M840,532 L840,551 L600,551 L600,570" fill="none" stroke="#0d6b76" stroke-width="2" stroke-linejoin="round" marker-end="url(#avip)"/>
+<path d="M840,532 L840,570" fill="none" stroke="#0d6b76" stroke-width="2" stroke-linejoin="round" marker-end="url(#avip)"/>
+<path d="M840,532 L840,551 L1080,551 L1080,570" fill="none" stroke="#0d6b76" stroke-width="2" stroke-linejoin="round" marker-end="url(#avip)"/>
+<path d="M1185,640 L1250,640" fill="none" stroke="#b04848" stroke-width="2" stroke-linejoin="round" marker-end="url(#aetcdB)"/>
+<path d="M430,850 L470,850 L470,1000 L490,1000" fill="none" stroke="#1f78b4" stroke-width="2" stroke-linejoin="round" marker-end="url(#agwB)"/>
+<path d="M1190,950 L1230,950 L1230,238 L1280,238 L1280,190" fill="none" stroke="#c98a1a" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#aadB)"/>
+<path d="M1520,330 L1520,190" fill="none" stroke="#c98a1a" stroke-width="2" stroke-linejoin="round" stroke-dasharray="6 4" marker-end="url(#aadB)"/>
+<rect x="363.6" y="265" width="132.8" height="21" rx="4" fill="#ffffff" stroke="#5b7bd5" stroke-width="0.9"/>
+<text x="430" y="280" text-anchor="middle" font-size="11.5" font-weight="600" fill="#5b7bd5">SSH 22 / HTTPS 443</text>
+<rect x="540.2" y="361" width="119.6" height="21" rx="4" fill="#ffffff" stroke="#6d52b8" stroke-width="0.9"/>
+<text x="600" y="376" text-anchor="middle" font-size="11.5" font-weight="600" fill="#6d52b8">SSH 22 → Bastion</text>
+<rect x="339.4" y="724" width="225.2" height="21" rx="4" fill="#ffffff" stroke="#1f78b4" stroke-width="0.9"/>
+<text x="452" y="739" text-anchor="middle" font-size="11.5" font-weight="600" fill="#1f78b4">HTTPS 443 / HTTP 80 → 10.10.1.25</text>
+<rect x="473.8" y="483" width="172.39999999999998" height="21" rx="4" fill="#ffffff" stroke="#0d6b76" stroke-width="0.9"/>
+<text x="560" y="498" text-anchor="middle" font-size="11.5" font-weight="600" fill="#0d6b76">kubectl :6443 (AD token)</text>
+<rect x="1164.8" y="649" width="106.39999999999999" height="21" rx="4" fill="#ffffff" stroke="#b04848" stroke-width="0.9"/>
+<text x="1218" y="664" text-anchor="middle" font-size="11.5" font-weight="600" fill="#b04848">etcd TLS :2379</text>
+<rect x="1170.2" y="709" width="119.6" height="21" rx="4" fill="#ffffff" stroke="#c98a1a" stroke-width="0.9"/>
+<text x="1230" y="724" text-anchor="middle" font-size="11.5" font-weight="600" fill="#c98a1a">Dex → LDAPS :636</text>
+<rect x="1377.7" y="251" width="284.59999999999997" height="21" rx="4" fill="#ffffff" stroke="#c98a1a" stroke-width="0.9"/>
+<text x="1520" y="266" text-anchor="middle" font-size="11.5" font-weight="600" fill="#c98a1a">all 11 hosts: DNS · NTP · Kerberos · SSSD</text>
+<text x="1660" y="1172" text-anchor="end" font-size="11" fill="#586674">Home Lab · Kubernetes platform · September 2026</text>
+</svg>

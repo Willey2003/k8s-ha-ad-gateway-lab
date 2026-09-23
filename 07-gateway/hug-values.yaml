@@ -1,0 +1,25 @@
+# HAProxy Unified Gateway (chart 1.2.0 / app 1.0.7) - LAB lab values
+controller:
+  replicaCount: 2
+  resources:
+    requests: {cpu: 100m, memory: 256Mi}
+    # HAProxy derives memmax from this limit; below ~2Gi it cannot fit maxconn 32000 with TLS (worker fails to load)
+    limits: {memory: 2560Mi}
+  # allow the non-root HAProxy process to bind 80/443 inside its own network namespace
+  podSecurityContext:
+    sysctls:
+    - {name: net.ipv4.ip_unprivileged_port_start, value: "0"}
+  topologySpreadConstraints:
+  - maxSkew: 1
+    topologyKey: kubernetes.io/hostname
+    whenUnsatisfiable: ScheduleAnyway
+    labelSelector:
+      matchLabels: {app.kubernetes.io/name: haproxy-unified-gateway}
+  service:
+    type: LoadBalancer
+    annotations:
+      metallb.io/loadBalancerIPs: 10.10.1.25   # below .32: the router only routes 10.10.1.0/27
+    externalTrafficPolicy: Cluster
+  podDisruptionBudget:
+    enabled: true
+    minAvailable: 1

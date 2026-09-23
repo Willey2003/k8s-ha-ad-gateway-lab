@@ -1,0 +1,256 @@
+<title>Home Lab Platform Brief</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{
+  --ground:#eef2f4; --paper:#ffffff; --ink:#18222d; --muted:#586674; --rule:#d5dde3; --soft:#f3f6f8;
+  --accent:#0d6b76; --accent-soft:#e3f1f2; --ok:#1d7a4c; --ok-soft:#e5f3eb; --warn:#9a5b0a; --warn-soft:#fbf0de;
+  --code-bg:#f1f4f6;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --ground:#0f1519; --paper:#172027; --ink:#e3e9ee; --muted:#9aa8b4; --rule:#2c3943; --soft:#1d2830;
+    --accent:#5cc3cc; --accent-soft:#16353a; --ok:#6fcf9a; --ok-soft:#173327; --warn:#e8b35a; --warn-soft:#3a2c14; --code-bg:#11191e;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#0f1519; --paper:#172027; --ink:#e3e9ee; --muted:#9aa8b4; --rule:#2c3943; --soft:#1d2830;
+  --accent:#5cc3cc; --accent-soft:#16353a; --ok:#6fcf9a; --ok-soft:#173327; --warn:#e8b35a; --warn-soft:#3a2c14; --code-bg:#11191e;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;padding:28px 16px 48px}
+.wrap{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.bar p{margin:0;color:var(--muted);font-size:13px;max-width:52ch}
+button{font:500 14px/1 var(--sans);background:var(--accent);color:var(--paper);border:0;border-radius:6px;padding:11px 16px;cursor:pointer}
+button:focus-visible{outline:3px solid var(--accent-soft);outline-offset:2px}
+.toast{font-size:13px;color:var(--ok);min-height:1em}
+.mail{background:var(--paper);border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+.head{padding:18px 28px;border-bottom:1px solid var(--rule);background:var(--soft);display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:14px}
+.head dt{color:var(--muted)} .head dd{margin:0}
+.head .subj{font-weight:600}
+.body{padding:26px 28px 32px}
+.body > * + *{margin-top:14px}
+h1{font-size:22px;line-height:1.3;margin:0 0 4px;font-weight:600;text-wrap:balance}
+h2{font-size:17px;font-weight:600;margin-top:30px;padding-bottom:6px;border-bottom:2px solid var(--accent);color:var(--ink);text-wrap:balance}
+h3{font-size:15px;font-weight:600;margin-top:18px}
+p{margin:0;max-width:72ch}
+ul{margin:0;padding-left:20px} li + li{margin-top:4px}
+.lede{color:var(--muted)}
+.summary{background:var(--accent-soft);border-radius:8px;padding:14px 18px}
+.summary ul{padding-left:18px}
+code,.mono{font-family:var(--mono);font-size:13px}
+code{background:var(--code-bg);padding:1px 5px;border-radius:4px}
+pre{font-family:var(--mono);font-size:12.5px;line-height:1.45;background:var(--code-bg);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;margin:0;overflow-x:auto;white-space:pre}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--rule);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--soft);font-weight:600;font-size:13px}
+td.num,.mono{font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font-size:12px;font-weight:600;padding:1px 8px;border-radius:999px;white-space:nowrap}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.steps{counter-reset:s;list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:10px;margin:0}
+.steps li::before{content:counter(s);width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--paper);font:600 13px/24px var(--sans);text-align:center}
+.note{border-left:3px solid var(--warn);background:var(--warn-soft);padding:10px 14px;border-radius:0 6px 6px 0}
+.sign{margin-top:26px}
+@media (max-width:520px){ .head,.body{padding-left:18px;padding-right:18px} }
+</style>
+
+<div class="wrap">
+  <div class="bar">
+    <p>Email draft for the team, management and Engineering. Click <strong>Copy email</strong>, paste into a new Outlook message, and add the recipients.</p>
+    <div style="display:flex;gap:10px;align-items:center">
+      <span class="toast" id="toast" role="status" aria-live="polite"></span>
+      <button id="copyBtn" type="button">Copy email</button>
+    </div>
+  </div>
+
+  <article class="mail">
+    <dl class="head">
+      <dt>To</dt><dd>Home Lab team; Management; Engineering</dd>
+      <dt>Subject</dt><dd class="subj">Home Lab Kubernetes platform: architecture, access and permissions</dd>
+    </dl>
+
+    <div class="body" id="emailBody">
+      <p>Hi all,</p>
+      <p>The LAB lab Kubernetes cluster has been rebuilt into a highly available, backed-up platform that everyone can log into with their Active Directory account. This note covers what was done, how the platform is built, who can do what, and how to get started.</p>
+
+      <div class="summary">
+        <ul>
+          <li><strong>Log in with your AD account:</strong> <code>ssh &lt;ad-username&gt;@bastion.corp.example</code>, then use <code>kubectl</code>. There's nothing to request or install.</li>
+          <li><strong>Everyone</strong> gets read-only access to the whole cluster, plus their own space to experiment (the <code>playground</code> namespace).</li>
+          <li><strong>Publish a test app</strong> at <code>https://&lt;name&gt;.apps.corp.example</code> in minutes, with HTTPS already set up.</li>
+        </ul>
+      </div>
+
+      <h2>1. What we did</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>Area</th><th>What was done</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td><strong>High availability</strong></td><td>Added two control-plane nodes (3 in total) behind a floating virtual IP (kube-vip); re-issued the API certificate for the VIP and moved all nodes to it.</td><td>One manager can fail without an outage. Failover tested: <span class="mono">~1&nbsp;s</span></td></tr>
+          <tr><td><strong>Time sync</strong></td><td>All 11 machines now take their time from the domain controllers. Before this, clocks were up to 6 minutes apart.</td><td>Clocks agree to within milliseconds</td></tr>
+          <tr><td><strong>Backups</strong></td><td>Weekly etcd snapshot plus a Velero backup of all application namespaces and their volume data, stored on a dedicated 500&nbsp;GB disk on the Bastion.</td><td>Restore drill run and <span class="pill ok">passed</span></td></tr>
+          <tr><td><strong>DNS</strong></td><td>Name and reverse-lookup records for every lab machine in <code>corp.example</code>, plus the wildcard <code>*.apps.corp.example</code>.</td><td>Everything reachable by name</td></tr>
+          <tr><td><strong>Active Directory</strong></td><td>All Linux machines joined to <code>corp.example</code>; encrypted LDAP (LDAPS) enabled on both domain controllers; a login service (Dex) connects Kubernetes to AD.</td><td>One AD account for SSH and kubectl</td></tr>
+          <tr><td><strong>Permissions</strong></td><td>Access is granted by AD group: read-only plus <code>playground</code> for everyone, full rights for <code>K8s-Admins</code>. Quotas and Pod Security rules apply in <code>playground</code>.</td><td>Nobody can change the platform by accident</td></tr>
+          <tr><td><strong>App gateway</strong></td><td>MetalLB for LAN IPs, plus HAProxy Unified Gateway (Gateway API, the successor to Ingress-NGINX) with a wildcard HTTPS certificate.</td><td>Apps published in minutes</td></tr>
+          <tr><td><strong>Housekeeping</strong></td><td>Grew the manager disk, corrected netmasks, host firewalls on all nodes, rotated the service account passwords, and set renewal reminders for every certificate.</td><td>Clean baseline</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>2. Architecture</h2>
+      <p>The full infrastructure diagram is attached (<code>lab-infrastructure.png</code>; editable version <code>lab-infrastructure.drawio</code>, which opens in diagrams.net and exports to Visio). In short:</p>
+<pre>                    Users (AD accounts)  --  e.g. 10.10.5.0/24
+                        |  SSH 22                 |  HTTPS 443
+                        v                         v
+          Bastion 10.10.1.11            App gateway 10.10.1.25
+          (bastion.corp.example)       (*.apps.corp.example)
+          kubectl + AD login             MetalLB + HAProxy Unified Gateway
+                        |                         |
+                        v                         v
+        +-------- Kubernetes API VIP 10.10.1.20:6443 (kube-vip) --------+
+        |   manager .14      manager-2 .21      manager-3 .22            |
+        |   (API server, scheduler, controller-manager on each)          |
+        +----------------------------------------------------------------+
+               |                                        |
+               v                                        v
+   etcd cluster (external, TLS)              Workers  worker-a..d  .15-.18
+   etcd-1 .12  etcd-2 .13  etcd-3 .19        (application pods, Calico)
+
+   AD login:  kubectl --> Dex (dex.corp.example:32000) --LDAPS--> DC01 / DC02
+   Backups:   Bastion --> weekly etcd snapshot + Velero --> 500 GB backup disk</pre>
+
+      <h3>Components</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Component</th><th>Name / IP</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>Bastion (jump host)</td><td class="mono">bastion.corp.example<br>10.10.1.11</td><td>Single entry point for everyone; kubectl is preconfigured</td></tr>
+          <tr><td>Kubernetes API (HA VIP)</td><td class="mono">k8s-api.corp.example<br>10.10.1.20:6443</td><td>Floats between the three managers</td></tr>
+          <tr><td>Control plane</td><td class="mono">manager 10.10.1.14<br>manager-2 10.10.1.21<br>manager-3 10.10.1.22</td><td>Kubernetes v1.32.13, cri-o 1.32.1</td></tr>
+          <tr><td>Worker nodes</td><td class="mono">worker-a/b/c/d<br>10.10.1.15 – 10.10.1.18</td><td>Run application workloads</td></tr>
+          <tr><td>External etcd</td><td class="mono">etcd-1 10.10.1.12<br>etcd-2 10.10.1.13<br>etcd-3 10.10.1.19</td><td>Cluster database (3 members)</td></tr>
+          <tr><td>AD login service</td><td class="mono">dex.corp.example:32000</td><td>Dex v2.45.1, checks AD passwords over LDAPS</td></tr>
+          <tr><td>App gateway</td><td class="mono">*.apps.corp.example<br>10.10.1.25 (ports 80/443)</td><td>HAProxy Unified Gateway 1.0.7, Gateway API</td></tr>
+          <tr><td>LoadBalancer pool</td><td class="mono">10.10.1.25 – 10.10.1.29<br>(+ .40 – .49 after the router change)</td><td>MetalLB 0.16.1, layer 2</td></tr>
+          <tr><td>Backups</td><td class="mono">Bastion, /srv/backup</td><td>Velero 1.18.3 + etcd snapshots, kept 8 weeks</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>3. Roles and permissions</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>Role</th><th>Who</th><th>SSH</th><th>Kubernetes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Lab user</strong></td><td>Every enabled AD account in <code>corp.example</code></td><td>Bastion only, no sudo</td><td>Read everything in the cluster (except Secrets); full read-write in <code>playground</code></td></tr>
+          <tr><td><strong>Lab administrator</strong></td><td>AD group <code>K8s-Admins</code>: Lab Admin 1, Lab Admin 2, Lab Admin 3</td><td>All 11 lab machines, with sudo</td><td><code>cluster-admin</code> (full control)</td></tr>
+          <tr><td><strong>Emergency access</strong></td><td>Lab administrators</td><td>Local accounts on each machine</td><td>Cluster admin config on the managers; used only if AD is unavailable</td></tr>
+        </tbody>
+      </table></div>
+
+      <h3>What a lab user can and cannot do</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>Can</th><th>Cannot</th></tr></thead>
+        <tbody>
+          <tr><td>
+            <ul>
+              <li>List and inspect pods, deployments, services, events and logs in any namespace</li>
+              <li>Create, change and delete deployments, services, config maps, secrets, jobs and HTTP routes in <code>playground</code></li>
+              <li>Publish apps at <code>&lt;name&gt;.apps.corp.example</code></li>
+            </ul>
+          </td><td>
+            <ul>
+              <li>Change or delete anything outside <code>playground</code></li>
+              <li>Read Secrets outside <code>playground</code></li>
+              <li>Create namespaces, or touch nodes or cluster settings</li>
+              <li>Run privileged pods or use NodePort / LoadBalancer services</li>
+            </ul>
+          </td></tr>
+        </tbody>
+      </table></div>
+      <p><strong>Playground limits:</strong> 4 CPU / 8&nbsp;GiB memory requested (8 CPU / 16&nbsp;GiB limits), 30 pods, 5 persistent volume claims, Pod Security "baseline". Containers get sensible defaults (0.1 CPU / 128&nbsp;MiB) if none are set.</p>
+
+      <h2>4. How to access with your AD account</h2>
+      <ol class="steps">
+        <li><div><strong>SSH to the Bastion</strong> with your AD username and password. Any SSH client works (Windows <code>ssh</code>, PuTTY, SecureCRT):<br><code>ssh firstname_lastname@bastion.corp.example</code></div></li>
+        <li><div><strong>kubectl is set up automatically</strong> on your first login, with <code>playground</code> as your default namespace.</div></li>
+        <li><div><strong>Run any command</strong>, for example <code>kubectl get pods -A</code>. It asks for your AD password once, then stays logged in: you're asked again after 24 hours without use, or after 7 days at most.</div></li>
+      </ol>
+
+      <h3>Publish a test app</h3>
+      <p>Create a Deployment, a Service and an <code>HTTPRoute</code> in <code>playground</code> for <code>&lt;name&gt;.apps.corp.example</code>, attached to gateway <code>apps</code> in namespace <code>haproxy-unified-gateway</code>. No DNS or certificate request is needed. Working example: <code>kubectl -n playground get httproute hello -o yaml</code>, live at <code>https://hello.apps.corp.example</code>.</p>
+
+      <h3>Trust the lab certificate (one-time, no admin rights needed)</h3>
+      <p>Lab HTTPS certificates are issued by our own "Home Lab Root CA". Trust it for your Windows user to avoid browser warnings. In Command Prompt:</p>
+<pre>scp &lt;ad-username&gt;@bastion.corp.example:/etc/kubernetes-ad/lab-ca.crt %USERPROFILE%\lab-ca.crt
+certutil -user -addstore Root %USERPROFILE%\lab-ca.crt</pre>
+
+      <h2>5. Network and IP addresses (Engineering)</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>From</th><th>To</th><th>Port</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>User networks (e.g. 10.10.5.0/24)</td><td class="mono">10.10.1.11 Bastion</td><td class="mono">TCP 22</td><td><span class="pill ok">Works</span></td></tr>
+          <tr><td>User networks</td><td class="mono">10.10.1.25 App gateway</td><td class="mono">TCP 80, 443</td><td><span class="pill ok">Works</span></td></tr>
+          <tr><td>User networks</td><td class="mono">10.10.1.32 – .254</td><td class="mono">any</td><td><span class="pill warn">Not routed: see request below</span></td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><strong>Request for Engineering:</strong> the gateway <code>10.10.1.1</code> currently treats this network as <code>10.10.1.0/27</code>, so only .1–.31 are reachable from other networks. All lab machines use <code>/24</code>. Please change the router interface to <strong><code>10.10.1.0/24</code></strong> (gateway 10.10.1.1, mask 255.255.255.0). This makes our reserved load-balancer range 10.10.1.40–.49 usable.</div>
+
+      <h3>Reserved addresses: please don't assign these</h3>
+      <div class="tbl"><table>
+        <thead><tr><th>IP</th><th>Use</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">10.10.1.20</td><td>Kubernetes API VIP</td></tr>
+          <tr><td class="mono">10.10.1.21, 10.10.1.22</td><td>Control-plane nodes manager-2, manager-3</td></tr>
+          <tr><td class="mono">10.10.1.23</td><td>Borg</td></tr>
+          <tr><td class="mono">10.10.1.24</td><td>docker-practice</td></tr>
+          <tr><td class="mono">10.10.1.25 – 10.10.1.29</td><td>Load-balancer pool (gateway on .25)</td></tr>
+          <tr><td class="mono">10.10.1.40 – 10.10.1.49</td><td>Load-balancer pool (usable after the /24 change)</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>6. Backups and maintenance</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>Item</th><th>Schedule / date</th></tr></thead>
+        <tbody>
+          <tr><td>etcd snapshot + Velero backup</td><td>Every Sunday 02:00 IST, kept 8 weeks</td></tr>
+          <tr><td>etcd client certificate renewal</td><td>Reminder Aug 2027 (expires 18 Sep 2027)</td></tr>
+          <tr><td>LDAPS, Dex and <code>*.apps</code> certificate renewal</td><td>Reminder Nov 2028 (expire 26 Dec 2028)</td></tr>
+          <tr><td>Restore drill</td><td>Passed; repeat after every Velero or Kubernetes upgrade</td></tr>
+        </tbody>
+      </table></div>
+
+      <h2>7. Please note</h2>
+      <ul>
+        <li>Use <code>playground</code> for experiments; the other namespaces run the platform.</li>
+        <li>Don't store real credentials or production data in the lab.</li>
+        <li>The etcd machines (10.10.1.12, .13, .19) also host the separate k3s and v1.29 lab clusters. Please check with us before changing anything on them. Separating them is the next planned project.</li>
+        <li>Password-free SSH between lab machines for administrators (Kerberos single sign-on) is being finalised.</li>
+        <li>For access problems or requests, contact <strong>Lab Admin 1</strong> or <strong>Lab Admin 2</strong>.</li>
+      </ul>
+
+      <div class="sign">
+        <p>Thanks,<br>Lab Admin 1</p>
+      </div>
+    </div>
+  </article>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('copyBtn'), toast=document.getElementById('toast'), body=document.getElementById('emailBody');
+  function say(t){toast.textContent=t;setTimeout(function(){toast.textContent='';},4000);}
+  function selectBody(){var r=document.createRange();r.selectNodeContents(body);var s=window.getSelection();s.removeAllRanges();s.addRange(r);return s;}
+  btn.addEventListener('click',function(){
+    var s=selectBody(), ok=false;
+    try{ok=document.execCommand('copy');}catch(e){ok=false;}
+    if(ok){s.removeAllRanges();say('Copied. Paste into Outlook with Ctrl+V.');}
+    else{say('Selected. Press Ctrl+C, then paste into Outlook.');}
+  });
+})();
+</script>
